@@ -1,0 +1,583 @@
+
+/* ═══════════════════════════════════
+   🌸 SAKURA LOVE ACADEMY 🌸
+   Dreamy • Romantic • Magical
+═══════════════════════════════════ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 0;
+  overflow-x: hidden;
+
+  font-family: "Trebuchet MS", sans-serif;
+  color: #85506f;
+
+  background:
+    radial-gradient(ellipse at 15% 10%,
+      #ffffff 0%, transparent 35%),
+    radial-gradient(ellipse at 85% 30%,
+      #f3d8ff 0%, transparent 40%),
+    linear-gradient(
+      135deg,
+      #fff6fb,
+      #ffe1ef,
+      #f8e6ff,
+      #fff0f7
+    );
+
+  background-size: 200% 200%;
+  animation: dreamySky 14s ease-in-out infinite;
+}
+
+/* 💗 A slowly breathing sky */
+
+@keyframes dreamySky {
+  0%, 100% {
+    background-position: 0% 30%;
+  }
+
+  50% {
+    background-position: 100% 70%;
+  }
+}
+
+/* ═══════════════════════════════════
+   🌸 ANIMATED SAKURA ATMOSPHERE
+═══════════════════════════════════ */
+
+.sakura-sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Every decorative element floats independently */
+
+.sakura-sky span {
+  position: absolute;
+  top: -60px;
+  user-select: none;
+}
+
+/* 🌸 FALLING CHERRY BLOSSOMS */
+
+.petal {
+  left: var(--left);
+  font-size: var(--size);
+  opacity: 0;
+
+  filter: drop-shadow(0 0 7px #ffacd4);
+
+  animation:
+    petalFall var(--speed) linear var(--delay) infinite,
+    petalSway 3s ease-in-out var(--delay) infinite;
+}
+
+/* Individual petal positions and speeds */
+
+.petal:nth-child(1) {
+  --left: 3%;
+  --size: 24px;
+  --speed: 10s;
+  --delay: 0s;
+}
+
+.petal:nth-child(2) {
+  --left: 13%;
+  --size: 17px;
+  --speed: 14s;
+  --delay: 3s;
+}
+
+.petal:nth-child(3) {
+  --left: 23%;
+  --size: 28px;
+  --speed: 11s;
+  --delay: 1s;
+}
+
+.petal:nth-child(4) {
+  --left: 33%;
+  --size: 19px;
+  --speed: 13s;
+  --delay: 5s;
+}
+
+.petal:nth-child(5) {
+  --left: 43%;
+  --size: 15px;
+  --speed: 9s;
+  --delay: 2s;
+}
+
+.petal:nth-child(6) {
+  --left: 53%;
+  --size: 25px;
+  --speed: 15s;
+  --delay: 4s;
+}
+
+.petal:nth-child(7) {
+  --left: 63%;
+  --size: 20px;
+  --speed: 12s;
+  --delay: 1.5s;
+}
+
+.petal:nth-child(8) {
+  --left: 73%;
+  --size: 30px;
+  --speed: 10s;
+  --delay: 6s;
+}
+
+.petal:nth-child(9) {
+  --left: 83%;
+  --size: 16px;
+  --speed: 14s;
+  --delay: 2.5s;
+}
+
+.petal:nth-child(10) {
+  --left: 94%;
+  --size: 23px;
+  --speed: 11s;
+  --delay: 4.5s;
+}
+
+/* Petals fall diagonally across the screen */
+
+@keyframes petalFall {
+  0% {
+    transform: translate(0, -5vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translate(-65px, 55vh) rotate(240deg);
+    opacity: 0.85;
+  }
+
+  90% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(85px, 115vh) rotate(600deg);
+    opacity: 0;
+  }
+}
+
+/* Extra sideways flutter */
+
+@keyframes petalSway {
+  0%, 100% {
+    margin-left: -12px;
+  }
+
+  50% {
+    margin-left: 18px;
+  }
+}
+
+/* ═══════════════════════════════════
+   💕 FLOATING HEARTS
+═══════════════════════════════════ */
+
+.heart {
+  left: var(--left);
+  color: #f18bb8;
+  font-size: var(--size);
+  opacity: 0;
+
+  text-shadow:
+    0 0 8px #ff9bc9,
+    0 0 20px #ffc1df;
+
+  animation:
+    heartRise var(--speed) ease-in-out var(--delay) infinite,
+    heartPulse 2s ease-in-out var(--delay) infinite;
+}
+
+.heart:nth-child(11) {
+  --left: 12%;
+  --size: 26px;
+  --speed: 9s;
+  --delay: 1s;
+}
+
+.heart:nth-child(12) {
+  --left: 38%;
+  --size: 18px;
+  --speed: 12s;
+  --delay: 4s;
+}
+
+.heart:nth-child(13) {
+  --left: 66%;
+  --size: 30px;
+  --speed: 10s;
+  --delay: 2s;
+}
+
+.heart:nth-child(14) {
+  --left: 88%;
+  --size: 22px;
+  --speed: 13s;
+  --delay: 5s;
+}
+
+/* Hearts slowly rise into the sky */
+
+@keyframes heartRise {
+  0% {
+    transform: translate(0, 110vh) rotate(-15deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: translate(35px, 45vh) rotate(15deg);
+  }
+
+  85% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(-20px, -15vh) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+/* A gentle heartbeat effect */
+
+@keyframes heartPulse {
+  0%, 100% {
+    scale: 0.85;
+  }
+
+  50% {
+    scale: 1.2;
+  }
+}
+
+/* ═══════════════════════════════════
+   ✨ MAGICAL FLOATING SPARKLES
+═══════════════════════════════════ */
+
+.sparkle {
+  left: var(--left);
+  color: white;
+  font-size: var(--size);
+
+  text-shadow:
+    0 0 5px white,
+    0 0 12px #ff8fc5,
+    0 0 25px #d6a0ff;
+
+  animation:
+    sparkleTwinkle var(--speed) ease-in-out var(--delay) infinite,
+    sparkleDrift 6s ease-in-out var(--delay) infinite;
+}
+
+.sparkle:nth-child(15) {
+  --left: 8%;
+  --size: 27px;
+  --speed: 2s;
+  --delay: 0s;
+  top: 25%;
+}
+
+.sparkle:nth-child(16) {
+  --left: 28%;
+  --size: 19px;
+  --speed: 3s;
+  --delay: 1s;
+  top: 65%;
+}
+
+.sparkle:nth-child(17) {
+  --left: 48%;
+  --size: 30px;
+  --speed: 2.5s;
+  --delay: 0.5s;
+  top: 15%;
+}
+
+.sparkle:nth-child(18) {
+  --left: 68%;
+  --size: 22px;
+  --speed: 3.5s;
+  --delay: 2s;
+  top: 75%;
+}
+
+.sparkle:nth-child(19) {
+  --left: 84%;
+  --size: 25px;
+  --speed: 2.2s;
+  --delay: 1.5s;
+  top: 35%;
+}
+
+.sparkle:nth-child(20) {
+  --left: 95%;
+  --size: 18px;
+  --speed: 3s;
+  --delay: 0.8s;
+  top: 60%;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.5) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(90deg);
+  }
+}
+
+@keyframes sparkleDrift {
+  0%, 100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -25px;
+  }
+}
+
+/* ═══════════════════════════════════
+   💌 ROMANTIC ANIME TABLE
+═══════════════════════════════════ */
+
+table {
+  position: relative;
+  z-index: 1;
+
+  width: 85%;
+  margin: 45px auto;
+
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+
+  color: #80516b;
+  background: #fffafd;
+
+  border: 2px solid #f5b1d0;
+
+  box-shadow:
+    0 0 12px #ffb6d588,
+    0 0 35px #e9b5ff66,
+    0 20px 45px #d38ab744;
+
+  animation: tableEntrance 1.2s ease both;
+
+  transition:
+    box-shadow 0.5s,
+    transform 0.5s;
+}
+
+/* 💗 A magical entrance */
+
+@keyframes tableEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(45px) scale(0.94);
+    filter: blur(8px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+    filter: blur(0);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🎀 Continuously shifting heading */
+
+tr th {
+  position: relative;
+  padding: 20px 14px;
+
+  color: #854463;
+
+  background: linear-gradient(
+    120deg,
+    #ffb5d2,
+    #ffe6f1,
+    #e6ceff,
+    #ffd0e5,
+    #ffb5d2
+  );
+
+  background-size: 300% 300%;
+
+  border-bottom: 2px solid #f1a4c8;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 0 white;
+
+  animation: headingGlow 8s ease infinite;
+
+  transition:
+    color 0.4s,
+    letter-spacing 0.4s,
+    text-shadow 0.4s;
+}
+
+@keyframes headingGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 🌷 Soft school notebook cells */
+
+tr td {
+  padding: 16px;
+  text-align: center;
+
+  border-bottom: 1px solid #f6d7e5;
+  border-right: 1px solid #fbe8f1;
+
+  transition:
+    background 0.35s,
+    color 0.35s,
+    box-shadow 0.35s;
+}
+
+tr:nth-child(odd) {
+  background: #fffafd;
+}
+
+tr:nth-child(even) {
+  background: #fff0f7;
+}
+
+/* 💖 Rows awaken when you hover */
+
+tr:hover td {
+  background: linear-gradient(
+    110deg,
+    #ffe1ed,
+    #f7e3ff,
+    #ffe8f2
+  );
+
+  color: #bc4281;
+
+  box-shadow:
+    inset 0 0 16px #ffacd455,
+    0 0 12px #e9b5ff33;
+}
+
+/* 🌸 Headings glow on hover */
+
+tr th:hover {
+  color: #bd4382;
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 6px white,
+    0 0 15px #ff83bc;
+}
+
+/* 💗 Table gets brighter when approached */
+
+table:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 0 22px #ff9fcf,
+    0 0 50px #d7a4ff88,
+    0 25px 55px #c77fa555;
+}
+
+/* 💌 Pretty text selection */
+
+::selection {
+  background: #ffb5d2;
+  color: #743653;
+}
+
+/* 🌷 Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+.sakura-title {
+  text-align: center;
+  color: #c45b91;
+  font-size: clamp(28px, 5vw, 48px);
+  text-shadow:
+    0 0 8px #fff,
+    0 0 20px #ffb2d6,
+    0 0 40px #e9b5ff;
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+.sakura-subtitle {
+  text-align: center;
+  color: #a56b91;
+  letter-spacing: 2px;
+  animation: subtitleFade 4s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes subtitleFade {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+
+
+
+
+
